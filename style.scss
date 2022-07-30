@@ -1,0 +1,551 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+// Color Variabels
+$dark-green : #243010;
+$light-green : #87A330;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+  background: #E8EEE6;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 0 10rem;
+}
+
+.navbar-link {
+  padding: 3px 10px;
+  transition: all .3s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $light-green;
+  }
+}
+
+.contact-link, .mobile-contact-link {
+  border: 1px solid #fff;
+  border-radius: 5px;
+
+  &:hover {
+    color: #fff;
+    background: $light-green;
+  }
+}
+
+section {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.btn {
+  background: $light-green;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background .3s ease-in-out, 
+              transform .2s ease;
+
+  &:hover {
+    background: $dark-green;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+.section-title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.section-heading {
+  color: $light-green;
+  font-size: 1.5rem;
+}
+
+.text-title {
+  margin-bottom: .5rem;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    right: 0;
+    color: #fff;
+
+    .navbar-brand {
+      font-family: 'Kaushan Script', cursive;
+      font-size: 2rem;
+    }
+
+    .navbar-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+}
+
+// Home Section Styling
+#homeSection {
+  display: flex;
+  flex-direction: column;
+  background-image: url("../images/greenie-bg-d.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: rgba(36, 48, 16, 0.5);
+  background-blend-mode: multiply;
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+
+  .home-content-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      .intro-title {
+        font-size: 8rem;
+        font-family: 'Kaushan Script', cursive;
+      }
+
+      .intro-subtitle {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .order-btn {
+        font-size: 1rem;
+        padding: 1rem 5rem;
+        border-radius: 5px;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+      }
+    }
+  }
+}
+
+// About Section Styling
+#aboutSection {
+  .about-content-container {
+    display: flex;
+    flex-direction: column;
+
+    .about-content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5rem;
+      margin-bottom: 8rem;
+
+      &:last-child{
+        margin-bottom: 0;
+      }
+
+      .about-img {
+        padding: 2rem;
+        background: $dark-green;
+        position: relative;
+        z-index: 1;
+        img {
+          width: 100%;
+        }
+
+        &::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 50%;
+          background: $light-green;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+// Products Section Styling
+#productsSection {
+  .procucts-content-container{
+    display: flex;
+    flex-direction: column;
+
+    .products-content {
+      .products-heading {
+        width: 50%;
+        margin-bottom: 5rem;
+      }
+
+      .product-items-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+
+        .product-card {
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0px 4px 30px rgba(22, 22, 22, 0.25);
+
+          .product-card-img{
+            img{
+              width: 100%;
+              border-radius: 10px 10px 0 0;
+            }
+          }
+
+          .product-card-desc {
+            padding: 1rem;
+
+            .product-title {
+              margin-bottom: .5rem;
+              font-size: 1.2rem;
+            }
+
+            .product-desc {
+              margin-bottom: 1rem;
+            }
+
+            .product-price {
+              .price {
+                font-weight: 600;
+                color: $light-green;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Contact Section Styling
+#contactSection {
+  .contact-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 4rem;
+
+    .contact-title {
+      text-align: center;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 500px;
+
+      .input-field {
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+        position: relative;
+
+        label {
+          font-size: .9rem;
+        }
+
+        input {
+          font-size: 1rem;
+          padding: .3rem;
+          background: none;
+          outline: none;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          &:focus{
+            border: 2px solid $light-green;
+          }
+        }
+
+        textarea{
+          font-size: 1rem;
+          font-family: inherit;
+          padding: .3rem;
+          height: 200px;
+          background: none;
+          outline: none;
+          border: 1px solid #000;
+          border-radius: 5px;
+
+          &:focus{
+            border: 2px solid $light-green;
+          }
+        }
+
+        .name-error-msg,
+        .email-error-msg,
+        .msg-error-msg {
+          color: red;
+          position: absolute;
+          bottom: -15px;
+          font-size: .7rem;
+        }
+
+        .msg-hidden {
+          display: none;
+        }
+      }
+
+      .contact-btn {
+        padding: .7rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 5px;
+        margin-top: 1rem;
+        box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+      }
+    }
+  }
+}
+
+// Footer Styling
+#mainFooter {
+  background: $dark-green;
+  color: #fff;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1rem;
+
+  .footer-brand {
+    font-size: 1.5rem;
+    font-family: 'Kaushan Script', cursive;
+  }
+
+  i {
+    margin-right: 2rem;
+  }
+
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+  }
+}
+
+// Mobile Styling
+.hamburger {
+  width: 17px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  display: none;
+
+  .line{
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: all .3s ease;
+  }
+}
+
+.mobile-nav {
+  position: absolute;
+  color: #fff;
+  width: 50%;
+  background-color: $light-green;
+  height: calc(90vh - 1rem);
+  top: calc(10vh + 1rem);
+  right: 0;
+  padding: 1rem;
+  transition: all .3s ease-in;
+  transform: translateX(100%);
+
+  .mobile-nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+}
+
+.nav-appear {
+  transform: translateX(0);
+}
+
+.toggle {
+  .line-1 {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  .line-2 {
+    transform: scaleX(0);
+  }
+
+  .line-3 {
+    transform: rotate(-45deg) translate(3px, -3px);
+  }
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+
+// Media Query
+@media (max-width: 960px) {
+  .container {
+    padding: 0 2rem;
+  }
+  
+  #productsSection {
+    .procucts-content-container{
+      .products-content {
+        .product-items-container{
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .text {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.2rem;
+  }
+
+  .navbar {
+    .navbar-brand {
+      font-size: 1.2rem;
+    }
+
+    .navbar-links {
+      display: none;
+    }
+  }
+
+  #homeSection {
+    background-image: url("../images/greenie-bg-m.png");
+
+    .home-content-container {
+      .intro {
+        .intro-title {
+          font-size: 4rem;
+        }
+
+        .intro-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .order-btn {
+          font-size: 14px;
+          padding: .5rem 3rem;
+        }
+      }
+    }
+  }
+
+  #aboutSection {
+    .about-content-container {
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin-bottom: 2rem;
+
+        .grid-reverse {
+          order: 2;
+        }
+
+        .about-img {
+          padding: 1.5rem;
+        }
+      }
+    }
+  }
+
+  #productsSection {
+    .procucts-content-container{
+      .products-content {
+        .products-heading {
+          width: 100%;
+        }
+
+        .product-items-container{
+          grid-template-columns: 1fr;
+        }
+      }
+    }
+  }
+
+  #contactSection {
+    .contact-content-container {
+      .contact-title {
+        font-size: 1.2rem;
+      }
+
+      .contact-form {
+        width: 100%;
+
+        .input-field {
+          input, textarea {
+            font-size: 14px
+          }
+        }
+
+        .contact-btn {
+          font-size: 14px;
+          padding: .5rem 0;
+          margin-top: .5rem;
+        }
+      }
+    }
+  }
+
+  #mainFooter {
+    font-size: 14px;
+
+    i {
+      margin-right: .5rem;
+    }
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
